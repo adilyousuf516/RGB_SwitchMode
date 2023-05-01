@@ -1,0 +1,60 @@
+<!-- JaavaScript input practice project Adil Yousuf -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Input practice</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<h1>JavaScript Input Practice </h1>
+	<br/>
+	<label for="enterNum">Please type your name:</label>
+	<input type="text" name="username" id="enterName" autofocus />
+	<input type="button" value="Submit Name" />
+	<h3 id="response"></h3>
+	<br/>
+	<br/>
+	<br/>
+	<label for="red">Enter a RED value:</label>
+	<input id="red" type="number" min="0" max="255" />
+	<br/>
+	<label for="green">Enter a GREEN value:</label>
+	<input id="green" type="number" min="0" max="255" />
+	<br/>
+	<label for="blue">Enter a BLUE value:</label>
+	<input id="blue" type="number" min="0" max="255" />
+	<br/>
+	<br/>
+	<input type="button" value="Add Color" id="color" />
+
+	<script>
+		// event handler for both button click events 
+		document.getElementsByTagName("input")[1].addEventListener("click", greeting);
+		document.getElementById("color").addEventListener("click", changeColor);
+		// definition of the greeting() function
+		function greeting() {
+		  // variable to store the user input
+		 let input = document.getElementById("enterName").value;
+
+		 //output the input data onto the page
+		 document.getElementById("response").textContent = "Nice to meet you, " + input + "."; 
+		} // end of the greeting() function 
+
+		//definition of the changeColor() function
+		function changeColor() {
+			
+		// variable to store the user input
+		let r = document.getElementById("red").value;
+		let g = document.getElementById("green").value;
+		let b = document.getElementById("blue").value;
+
+		document.getElementsByTagName("body")[0].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+	} // end of changeColor() function 
+
+	</script>
+	</body>
+</html>
